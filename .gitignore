@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+dist/
+
+.DS_Store
+._.*
+env.json
+env.backup.json
+*.test.ts

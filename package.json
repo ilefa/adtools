@@ -1,0 +1,26 @@
+{
+    "name": "adtools",
+    "version": "1.0.0",
+    "description": "Internal tooling to interact with AD",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "prepare": "rm -rf dist && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/ilefa/adtools.git"
+    },
+    "author": "Mike Medved",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/ilefa/adtools/issues"
+    },
+    "homepage": "https://github.com/ilefa/adtools#readme",
+    "dependencies": {
+        "activedirectory": "^0.7.2"
+    },
+    "devDependencies": {
+        "@types/node": "^18.7.23"
+    }
+}
