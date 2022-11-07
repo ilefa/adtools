@@ -49,6 +49,20 @@ export const find = async (directory: ActiveDirectory, query: string | {}, err?:
     await promisify(directory.find.bind(directory))(query).catch(err || (() => null));
 
 /**
+ * Attempts to perform an LDAP query on the specified
+ * ActiveDirectory connection, and with a custom baseDN.
+ * 
+ * @param directory the active directory instance
+ * @param query the ldap query to execute
+ * @param baseDN the base DN to execute it on
+ * @param err an optional error handler
+ * 
+ * @returns the results of the query, if any
+ */
+export const findAt = async (directory: ActiveDirectory, query: string | {}, baseDN: string, err?: (error: Error) => void) =>
+    await swapBaseThen<any>(directory, baseDN, async () => await find(directory, query, err));
+
+/**
  * Performs an LDAP query in order to find any OUs
  * with the specified name in the ActiveDirectory instance.
  * 

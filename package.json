@@ -1,6 +1,6 @@
 {
     "name": "@ilefa/adtools",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Internal tooling to interact with AD",
     "main": "dist/index.js",
     "scripts": {
