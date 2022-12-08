@@ -156,8 +156,9 @@ export const findComputer = async (directory: ActiveDirectory, name: string, err
  * @throws if the OU is not found
  * @returns the machines' associated AD objects, if found
  */
-export const findComputersByOU = async (directory: ActiveDirectory, dn: string, err?: (error: Error) => void) => {
-    let results = await swapBaseThen<any>(directory, dn, async () => await find(directory, '(objectClass=computer)', err));
+export const findComputersByOU = async (directory: ActiveDirectory, dn: string, opts?: {}, err?: (error: Error) => void) => {
+    let filter = '(objectClass=computer)';
+    let results = await swapBaseThen<any>(directory, dn, async () => await find(directory, opts ? { ...opts, filter } : filter, err));
     if (!results) return null;
     return results.other;
 }
