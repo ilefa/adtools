@@ -1,7 +1,7 @@
 {
     "name": "@ilefa/adtools",
     "version": "1.0.4",
-    "description": "Internal tooling to interact with AD",
+    "description": "ActiveDirectory toolkit for domain applications",
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
